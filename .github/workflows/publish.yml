@@ -123,6 +123,8 @@ jobs:
 
       - name: Compile terminus-store-prolog
         shell: bash
+        env:
+          SWIPL: /Applications/SWI-Prolog.app/Contents/MacOS/bin/swipl
         run: |
           SWIPL_PATH='/Applications/SWI-Prolog.app/Contents/MacOS/' ./make.sh
 
