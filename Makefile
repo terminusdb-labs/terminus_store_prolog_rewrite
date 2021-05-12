@@ -10,14 +10,14 @@ SOEXT = dll
 RUST_TARGET_LOCATION = rust/target/$(RUST_TARGET)/$(RUST_LIB_NAME).$(SOEXT)
 else ifeq ($(shell uname), Darwin)
 SOEXT = dylib
-else ifeq ($(PLARCH), arm64-android)
+else ifeq ($(SWIARCH), arm64-android)
 endif
 
 
 all: release
 
 build:
-	mkdir -p lib/$(PLARCH)
+	mkdir -p lib/$(SWIARCH)
 	cd rust; cargo build $(CARGO_FLAGS)
 	cp $(RUST_TARGET_LOCATION) $(TARGET)
 
