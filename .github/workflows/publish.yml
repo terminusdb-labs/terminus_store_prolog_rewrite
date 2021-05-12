@@ -127,7 +127,7 @@ jobs:
         env:
           SWIPL: /Applications/SWI-Prolog.app/Contents/MacOS/swipl
         run: |
-          swipl --dump-runtime-variables
+          $SWIPL --dump-runtime-variables
           SWIPL_PATH='/Applications/SWI-Prolog.app/Contents/MacOS/' ./make.sh
 
       - name: Upload macOS artifact dylib
