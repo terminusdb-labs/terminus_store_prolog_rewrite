@@ -2,7 +2,6 @@ RUST_LIB_NAME = terminus_store_prolog
 RUST_TARGET=release
 RUST_TARGET_DIR = rust/target/$(RUST_TARGET)/
 RUST_TARGET_LOCATION = rust/target/$(RUST_TARGET)/lib$(RUST_LIB_NAME).$(SOEXT)
-ARCH = 
 TARGET = $(PACKSODIR)/libterminus_store.$(SOEXT)
 CARGO_FLAGS =
 
@@ -11,14 +10,14 @@ SOEXT = dll
 RUST_TARGET_LOCATION = rust/target/$(RUST_TARGET)/$(RUST_LIB_NAME).$(SOEXT)
 else ifeq ($(shell uname), Darwin)
 SOEXT = dylib
-else ifeq ($(SWIARCH), arm64-android)
+else ifeq ($(PLARCH), arm64-android)
 endif
 
 
 all: release
 
 build:
-	mkdir -p lib/$(SWIARCH)
+	mkdir -p lib/$(PLARCH)
 	cd rust; cargo build $(CARGO_FLAGS)
 	cp $(RUST_TARGET_LOCATION) $(TARGET)
 
