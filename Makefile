@@ -8,6 +8,7 @@ CARGO_FLAGS =
 
 ifeq ($(OS), Windows_NT)
 SOEXT = dll
+RUST_TARGET_LOCATION = rust/target/$(RUST_TARGET)/$(RUST_LIB_NAME).$(SOEXT)
 else ifeq ($(shell uname), Darwin)
 SOEXT = dylib
 else ifeq ($(SWIARCH), arm64-android)
