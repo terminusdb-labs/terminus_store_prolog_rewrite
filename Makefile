@@ -10,6 +10,7 @@ SOEXT = dll
 # NOTE: this is not guaranteed but we only support win64 now anyway
 SWIARCH = x64-win64
 RUST_TARGET_LOCATION = rust/target/$(RUST_TARGET)/$(RUST_LIB_NAME).$(SOEXT)
+TARGET = lib/$(SWIARCH)/libterminus_store.$(SOEXT)
 else ifeq ($(shell uname), Darwin)
 SOEXT = dylib
 else ifeq ($(SWIARCH), arm64-android)
