@@ -124,10 +124,12 @@ jobs:
       - name: Compile terminus-store-prolog
         shell: bash
         env:
-          SWIPL: /Applications/SWI-Prolog.app/Contents/MacOS/bin/swipl
+          SWIPL: /Applications/SWI-Prolog.app/Contents/MacOS/swipl
         run: |
+          ls /Applications/SWI-Prolog.app/
+          ls /Applications/SWI-Prolog.app/Contents/
           ls /Applications/SWI-Prolog.app/Contents/MacOS/
-          ls /Applications/SWI-Prolog.app/Contents/MacOS/bin
+          ls /Applications/SWI-Prolog.app/Contents/MacOS/swipl
           SWIPL_PATH='/Applications/SWI-Prolog.app/Contents/MacOS/' ./make.sh
 
       - name: Upload macOS artifact dylib
