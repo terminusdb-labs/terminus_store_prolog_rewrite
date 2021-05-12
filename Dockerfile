@@ -2,7 +2,7 @@
 FROM terminusdb/swipl:v8.2.4
 WORKDIR /usr/share/swi-prolog/pack/terminus_store_prolog
 COPY . .
-RUN BUILD_DEPS="git build-essential curl" && apt-get update \
+RUN BUILD_DEPS="git build-essential curl clang" && apt-get update \
 	&& apt-get install -y --no-install-recommends $BUILD_DEPS \
         ca-certificates \
     make
