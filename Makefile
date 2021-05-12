@@ -29,8 +29,7 @@ debug: build
 release: CARGO_FLAGS += --release
 release: build
 
-windows_release: CARGO_FLAGS += --release
-windows_release: windows
+windows_release: release
 
 install::
 
