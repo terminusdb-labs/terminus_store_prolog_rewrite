@@ -99,7 +99,7 @@ jobs:
           SWIPL: C:\Program Files\swipl\bin\swipl.exe
           LIBCLANG_PATH: C:\Program Files\LLVM\bin\
         run: |
-          /c/Program\ Files/swipl/bin/swipl.exe --dump-runtime-variables
+          /c/Program\ Files/swipl/bin/swipl.exe -g 'use_module(library(prolog_pack)), prolog_pack:build_environment(Env), forall(member(E, Env), (writeq(E),nl)), halt'
           make windows_release
 
 
@@ -127,7 +127,7 @@ jobs:
         env:
           SWIPL: /Applications/SWI-Prolog.app/Contents/MacOS/swipl
         run: |
-          $SWIPL --dump-runtime-variables
+          $SWIPL -g 'use_module(library(prolog_pack)), prolog_pack:build_environment(Env), forall(member(E, Env), (writeq(E),nl)), halt'
           SWIPL_PATH='/Applications/SWI-Prolog.app/Contents/MacOS/' ./make.sh
 
       - name: Upload macOS artifact dylib
