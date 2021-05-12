@@ -1,9 +1,9 @@
-RUST_LIB_NAME = terminus_store_prolog_rewrite
+RUST_LIB_NAME = terminus_store_prolog
 RUST_TARGET=release
 RUST_TARGET_DIR = rust/target/$(RUST_TARGET)/
 RUST_TARGET_LOCATION = rust/target/$(RUST_TARGET)/lib$(RUST_LIB_NAME).$(SOEXT)
 ARCH = 
-TARGET = $(PACKSODIR)/libterminus_store_rewrite.$(SOEXT)
+TARGET = $(PACKSODIR)/libterminus_store.$(SOEXT)
 CARGO_FLAGS =
 
 ifeq ($(OS), Windows_NT)
